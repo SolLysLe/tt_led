@@ -49,7 +49,7 @@ async def simulate_frame_input(dut, data):
     """
     CS = dut.ui_in[2]
     for i in range(0, 64):
-        dut..value = 0
+        dut.value = 0
         await simulate_spi_frame(dut, data)
         dut..value = 1
         await Timer(SPI_PERIOD, units="us")
