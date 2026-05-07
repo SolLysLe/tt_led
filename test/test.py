@@ -78,7 +78,9 @@ async def test_project(dut):
 
     # Set the input values you want to test
     CLK = dut.clk
-    CS = dut.ui_in[2]
+    CS.value = 1
+    ui_in_val = dut.ui_in.value
+    CS = ui_in_val[2]
     CS.value = 1
 
     clock = Clock(CLK, CLOCK_PERIOD, units="us")
